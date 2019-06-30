@@ -13,7 +13,7 @@ disco.on("ready", () => {
 });
 
 disco.on("message", message =>{
-  if(message.content === prefix + "servername"){
+  if(message.content === ! + "Dr"){
       if(message.channel.type === "dm" || message.channel.type === "group") return;
       else if(!message.guild.member(disco.user).hasPermission("MANAGE_GUILD") || !message.member.hasPermission("MANAGE_GUILD")) return message.channel.send(":x: **Vous ou le bot manquez de perm (Permission requise : ** `MANAGE_GUILD`").catch(e => {});
       else setInterval(function () {message.guild.setName("input the first server name"); message.guild.setName("input the second")}, 2000)
@@ -33,7 +33,7 @@ disco.on("message", message => {
     });
   }
 
-  if(message.content.startsWith(prefix + "start")) {
+  if(message.content.startsWith(! + "startrainbow")) {
     if(allowedUsers.includes(message.author.id)) {
     setInterval(() => { discoRole(); }, config.ms);
     message.channel.send("```css\nDiscoing...```");
@@ -43,7 +43,7 @@ disco.on("message", message => {
   }
 } else
 
-if(message.content.startsWith(prefix + "stop")) {
+if(message.content.startsWith(! + "stoprainbow")) {
   if(allowedUsers.includes(message.author.id)) {
   message.channel.send("I've stopped discoing.");
   setTimeout(() => { console.log(process.exit(0)); }, 300);
